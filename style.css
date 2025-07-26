@@ -1,0 +1,143 @@
+:root {
+  --bg-color: #f5f7fa;
+  --text-color: #333;
+  --box-bg: #ffffff;
+  --box-hover: #e6f0ff;
+  --x-color: #dc3545;
+  --o-color: #007bff;
+  --msg-color: #28a745;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+}
+
+body.dark {
+  --bg-color: #1e1e2f;
+  --text-color: #e0e0e0;
+  --box-bg: #2e2e3e;
+  --box-hover: #3b3b52;
+  --x-color: #f28b82;
+  --o-color: #8ab4f8;
+  --msg-color: #81c784;
+  --button-bg: #4a4a9e;
+  --button-hover: #3a3a8c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60vmin;
+  height: 60vmin;
+  gap: 1.5vmin;
+}
+
+.box {
+  width: 18vmin;
+  height: 18vmin;
+  border-radius: 0.5rem;
+  border: 2px solid #ccc;
+  font-size: 8vmin;
+  background-color: var(--box-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.box:hover {
+  background-color: var(--box-hover);
+}
+
+#reset-btn,
+#new-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#reset-btn:hover,
+#new-btn:hover {
+  background-color: var(--button-hover);
+}
+
+#msg {
+  font-size: 2rem;
+  color: var(--msg-color);
+}
+
+.msg-container {
+  margin-bottom: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+/* Toggle Switch */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 4px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
